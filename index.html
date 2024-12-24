@@ -54,13 +54,13 @@
             left: 0;
             background-color: #41729f;
             /* Midnight Blue */
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
             opacity: 0;
             /* Add opacity for smooth transition */
         }
 
         .nav-links.active {
-            display: block;
+            display: flex;
             /* Show when active */
             opacity: 1;
             /* Show when active */
@@ -275,6 +275,27 @@
             animation-delay: 1s;
         }
 
+        @media (min-width: 769px) {
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                opacity: 1;
+                align-items: center;
+            }
+
+            .nav-links li {
+                margin: 0 15px;
+            }
+
+            .hamburger {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero {
                 flex-direction: column;
@@ -386,9 +407,7 @@
                 </defs>
                 <circle cx="50" cy="50" r="40" fill="url(#grad1)" />
                 <path d="M50 30 L60 50 L50 70 L40 50 Z" fill="#ffffff" />
-                <animateTransform attributeType="xml" attributeName="transform" type="translate"
-                    values="0,-5; 0,5; 0,-5" dur="4s" repeatCount="indefinite" />
-            </svg>
+                </svg>
         </div>
         <nav>
             <div class="hamburger" onclick="toggleMenu()">
@@ -400,8 +419,8 @@
                 <li><a href="#hero" onclick="closeMenu()">Home</a></li>
                 <li><a href="#description" onclick="closeMenu()">Sobre</a></li>
                 <li><a href="#section1" onclick="closeMenu()">Conecte-se</a></li>
-                <li><a href="#section2" onclick="closeMenu()">Continue conectado</a></li>
-                <li><a href="#section3" onclick="closeMenu()">Reforce suas conexões</a></li>
+                 <li><a href="#section2" onclick="closeMenu()">Continue</a></li>
+                <li><a href="#section3" onclick="closeMenu()">Reforce</a></li>
             </ul>
         </nav>
     </header>
@@ -409,9 +428,12 @@
     <section id="hero" class="hero">
         <div class="hero-text">
             <h1>Sempre conectado</h1>
-            <a href="#description">
+            <p><a href="#description">
                 <button>Saiba mais</button>
-            </a>
+            </a></p>
+            <br>
+            <p>"Pois eu sei os planos que tenho para vocês", diz o Senhor, "planos de fazê-los prosperar e não de lhes causar dano, planos de dar-lhes esperança e um futuro.", Jeremias 29:11</p>
+            
         </div>
         <div class="hero-image">
             <!-- <img src="top-image.png" alt="Mão segurando um celular"> -->
@@ -484,24 +506,9 @@
 
     <footer>
         <div class="logo">
-            <!-- <img src="logo.png" alt="Logo"> -->
-            <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#81C784;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <circle cx="50" cy="50" r="40" fill="url(#grad1)" />
-                <path d="M50 30 L60 50 L50 70 L40 50 Z" fill="#ffffff" />
-                <animateTransform attributeType="xml" attributeName="transform" type="translate"
-                    values="0,-5; 0,5; 0,-5" dur="4s" repeatCount="indefinite" />
-            </svg>
+            © 2024, Conectado
         </div>
         <div class="contact">
-            <h3>Whattsapp
-                <br>(19) 1234-5678
-            </h3>
         </div>
     </footer>
 
@@ -521,9 +528,8 @@
         function closeMenu() {
             const navLinks = document.querySelector('.nav-links');
             const hamburger = document.querySelector('.hamburger');
-            navLinks.style.display = 'none';
             navLinks.classList.remove('active');
-            hamburger.classList.remove('toggle');
+             hamburger.classList.remove('toggle');
         }
     </script>
 </body>
