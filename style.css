@@ -47,6 +47,7 @@ header .logo {
     box-shadow: none;
     border-radius: 0;
     z-index: 999;
+    align-items: center;
 }
 
 .nav-links.active {
@@ -57,7 +58,7 @@ header .logo {
 
 .nav-links li {
     text-align: center;
-    margin: 0 15px;
+    margin: 0 0px;
     padding: 8px 0;
     border-bottom: none;
 }
